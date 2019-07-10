@@ -5,24 +5,24 @@
     [headerHeight]="50"
     [footerHeight]="50"
     [rowHeight]="'auto'"
-    [limit]="10"
+    [limit]="5"
     [rows]='users'
+    [loadingIndicator]="isLoaded"
   >
     <ngx-datatable-column name="Login">
       <ng-template let-row="row" ngx-datatable-cell-template>
-        <a href="#">{{row.login}}</a>
+        <div
+          [routerLink]="['user', row.id]"
+          (click)="openBottomSheet(row.id)"
+        >
+          {{row.login}}
+        </div>
       </ng-template>
     </ngx-datatable-column>
 
     <ngx-datatable-column name="Score">
       <ng-template let-row="row" ngx-datatable-cell-template>
-        {{row.score}}
-      </ng-template>
-    </ngx-datatable-column>
-
-    <ngx-datatable-column name="Image">
-      <ng-template let-row="row" ngx-datatable-cell-template>
-        <img [src]="row.image">
+        {{row.score | number: '1.2-2'}}
       </ng-template>
     </ngx-datatable-column>
 

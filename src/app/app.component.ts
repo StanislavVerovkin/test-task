@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ApiGitService} from './shared/services/api-git.service';
+import {UserModel} from './shared/interfaces/user.model';
+import {el} from '@angular/platform-browser/testing/src/browser_util';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,8 @@ import {ApiGitService} from './shared/services/api-git.service';
 export class AppComponent implements OnInit {
 
   form: FormGroup;
-  users = [];
+  users: UserModel[];
+  isLoaded = false;
 
   constructor(
     private apiGitService: ApiGitService,
@@ -30,17 +33,18 @@ export class AppComponent implements OnInit {
   }
 
   onSubmit(value) {
+    this.isLoaded = true;
     this.apiGitService.getUsersByName(value.name)
       .subscribe((data: any) => {
-        this.users = data.items.map((element) => {
+        this.users = data.items.map((element: UserModel) => {
           return {
+            url: element.url,
             login: element.login,
             score: element.score,
-            image: element.avatar_url,
+            id: element.id,
           };
         });
-        this.form.reset();
-        console.log(this.users);
+        this.isLoaded = false;
       });
   }
 }

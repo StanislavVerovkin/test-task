@@ -12,7 +12,11 @@ export class ApiGitService {
   ) {
   }
 
-  getUsersByName(name) {
+  getUsersByName(name): Observable<any> {
     return this.http.get(`https://api.github.com/search/users?q=${name}`);
+  }
+
+  getUserById(id): Observable<any> {
+    return this.http.get(`https://api.github.com/user/${id}`);
   }
 }

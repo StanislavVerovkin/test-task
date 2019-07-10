@@ -9,12 +9,17 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 import {AppComponent} from './app.component';
 import {DataTableComponent} from './components/data-table/data-table.component';
+import {UserDetailComponent} from './components/user-detail/user-detail.component';
+import { BottomSheetComponent } from './components/user-detail/bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataTableComponent
+    DataTableComponent,
+    UserDetailComponent,
+    BottomSheetComponent,
   ],
+  entryComponents: [BottomSheetComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -22,7 +27,7 @@ import {DataTableComponent} from './components/data-table/data-table.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxDatatableModule
+    NgxDatatableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

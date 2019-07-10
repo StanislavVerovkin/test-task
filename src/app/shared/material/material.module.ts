@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {
+  MatBottomSheetModule,
   MatButtonModule, MatCardModule,
   MatCheckboxModule,
   MatFormFieldModule, MatIconModule,
@@ -22,7 +23,8 @@ import {
     MatListModule,
     MatProgressBarModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatBottomSheetModule
   ],
   exports: [
     MatButtonModule,
@@ -38,7 +40,8 @@ import {
     MatListModule,
     MatProgressBarModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatBottomSheetModule
   ],
 })
 export class MaterialModule {
