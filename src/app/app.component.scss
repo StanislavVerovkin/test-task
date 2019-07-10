@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inside-form {
+  display: flex;
+  flex-direction: column;
+  color: gainsboro;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 35em;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: #816A98;
+  outline: none;
+  border-radius: 40px;
+  opacity: .8;
+  color: gainsboro;
+  width: 200px;
+}
+
+mat-label {
+  color: #816A98;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}
