@@ -35,8 +35,8 @@ export class UsersComponent implements OnInit {
   onSubmit(value) {
     this.isLoaded = true;
     this.apiGitService.getUsersByName(value.name)
-      .subscribe((data: any) => {
-        this.users = data.items.map((element: UserModel) => {
+      .subscribe(data => {
+        this.users = data.items.map((element) => {
           return {
             login: element.login,
             score: element.score,
