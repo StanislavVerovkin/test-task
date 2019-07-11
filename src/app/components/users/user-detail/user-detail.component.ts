@@ -23,7 +23,7 @@ export class UserDetailComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     if (this.id) {
       this.apiGitService.getUserById(this.id)
-        .subscribe((user: any) => {
+        .subscribe((user: UserDetailModel) => {
           this.user = user;
         });
     }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-loader',
-  templateUrl: './loader.component.html',
+  template: '<div class="loader"></div>',
   styleUrls: ['./loader.component.scss']
 })
 export class LoaderComponent implements OnInit {
@@ -11,5 +11,4 @@ export class LoaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
