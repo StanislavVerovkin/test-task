@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {ApiGitService} from '../../../shared/services/api-git.service';
-import {UserDetailModel} from '../../../shared/interfaces/user-detail.model';
+import {UserDetailModel} from '../../../shared/models/user-detail.model';
 
 @Component({
   selector: 'app-user-detail',

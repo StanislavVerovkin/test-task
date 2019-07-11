@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UserModel} from '../../shared/interfaces/user.model';
+import {UserModel} from '../../shared/models/user.model';
 import {ApiGitService} from '../../shared/services/api-git.service';
 
 @Component({
