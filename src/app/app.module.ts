@@ -11,7 +11,6 @@ import {AppComponent} from './app.component';
 import {DataTableComponent} from './components/data-table/data-table.component';
 import {UserDetailComponent} from './components/users/user-detail/user-detail.component';
 import {UsersComponent} from './components/users/users.component';
-import {LoaderComponent} from './shared/ui/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,6 @@ import {LoaderComponent} from './shared/ui/loader/loader.component';
     DataTableComponent,
     UserDetailComponent,
     UsersComponent,
-    LoaderComponent,
   ],
   imports: [
     BrowserModule,
