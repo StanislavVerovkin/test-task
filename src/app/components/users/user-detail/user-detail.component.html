@@ -1,0 +1,20 @@
+<div *ngIf="user" class="container">
+  <mat-card class="card">
+    <div class="header">
+      <div class="name">{{user.login}}</div>
+      <a target="_blank" [href]="user.html_url">{{user.html_url}}</a>
+    </div>
+    <img mat-card-image [src]="user.avatar_url" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        Repos quantity: {{user.public_repos}}
+      </p>
+      <p>
+        Followers: {{user.followers}}
+      </p>
+      <p>
+        Following: {{user.following}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

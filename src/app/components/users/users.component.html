@@ -7,7 +7,7 @@
         formControlName="name"
         matInput
       >
-      <mat-error *ngIf="form.get('name').invalid && form.get('name').touched">{{getErrorMessageName()}}</mat-error>
+      <mat-error *ngIf="form.get('name').invalid && form.get('name').touched">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <div class="buttons">
       <button [disabled]="form.invalid" type="submit" mat-raised-button="primary">Search</button>
@@ -18,4 +18,5 @@
 <app-data-table
   [users]="users"
   [isLoaded]="isLoaded"
-></app-data-table>
+>
+</app-data-table>

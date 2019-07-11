@@ -5,10 +5,10 @@ import {ApiGitService} from '../../shared/services/api-git.service';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   form: FormGroup;
   users: UserModel[];
@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.users = JSON.parse(localStorage.getItem('users'));
     this.form = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -27,7 +28,7 @@ export class UserComponent implements OnInit {
     });
   }
 
-  getErrorMessageName() {
+  getErrorMessage() {
     return this.form.controls.name.hasError('required') ? 'Name is required' : '';
   }
 
@@ -37,12 +38,12 @@ export class UserComponent implements OnInit {
       .subscribe((data: any) => {
         this.users = data.items.map((element: UserModel) => {
           return {
-            url: element.url,
             login: element.login,
             score: element.score,
             id: element.id,
           };
         });
+        localStorage.setItem('users', JSON.stringify(this.users));
         this.isLoaded = false;
       });
   }

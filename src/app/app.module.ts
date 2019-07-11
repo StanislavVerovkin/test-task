@@ -9,15 +9,15 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 import {AppComponent} from './app.component';
 import {DataTableComponent} from './components/data-table/data-table.component';
-import {UserDetailComponent} from './components/user/user-detail/user-detail.component';
-import {UserComponent} from './components/user/user.component';
+import {UserDetailComponent} from './components/users/user-detail/user-detail.component';
+import {UsersComponent} from './components/users/users.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataTableComponent,
     UserDetailComponent,
-    UserComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
