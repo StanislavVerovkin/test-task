@@ -11,12 +11,11 @@
   >
     <ngx-datatable-column name="Login">
       <ng-template let-row="row" ngx-datatable-cell-template>
-        <div
-          [routerLink]="['user', row.id]"
-          (click)="openBottomSheet(row.id)"
+        <a
+          [routerLink]="['/user/', row.id]"
         >
           {{row.login}}
-        </div>
+        </a>
       </ng-template>
     </ngx-datatable-column>
 
