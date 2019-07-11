@@ -7,16 +7,18 @@ import {Observable} from 'rxjs';
 })
 export class ApiGitService {
 
+  baseApiUrl = 'https://api.github.com';
+
   constructor(
     private http: HttpClient
   ) {
   }
 
   getUsersByName(name): Observable<any> {
-    return this.http.get(`https://api.github.com/search/users?q=${name}`);
+    return this.http.get(`${this.baseApiUrl}/search/users?q=${name}`);
   }
 
   getUserById(id): Observable<any> {
-    return this.http.get(`https://api.github.com/user/${id}`);
+    return this.http.get(`${this.baseApiUrl}/user/${id}`);
   }
 }
